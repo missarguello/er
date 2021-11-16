@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%-include( "partials/head")%>
+</head>
+
+<body>
+    <div class="container p-4">
+        <div class="row">
+            <div class="card-columns">
+
+                <% mostrart.forEach(function (mostrart) { %>
+                    <div class="card animated fadeInDown">
+                        <img src="<%= mostrart.path %>" class="card-img-top" alt="<%= mostrart.filename %>">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= mostrart.titulo %>
+                            </h5>
+                            <p class="card-text">
+                                <%= mostrart.subtitulo %>
+                            </p>
+                            <p class="card-text">
+                                <%= mostrart.c_noti %>
+                            </p>
+                            <p class="card-text">
+                                <%= mostrart.autor %>
+                            </p>
+                            <p class="card-text">
+                                <%= mostrart.f_creacion %>
+                            </p>
+                            <p class="card-text">
+                                <%= mostrart.d_noti %>
+                            </p>
+                            <a href="/delete/<%= mostrart.id%>" class="btn btn-danger btn-block">
+
+    Delete                        </a>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
